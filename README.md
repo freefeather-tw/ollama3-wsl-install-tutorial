@@ -13,13 +13,13 @@
 2. 執行 `sudo apt upgrade`
 3. 執行 `sudo apt-get install ca-certificates curl gnupg`
 4. 執行 `sudo install -m 0755 -d /etc/apt/keyrings`
-5. 執行 `curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
+5. 執行 `curl -fsSL [https://download.docker.com/linux/ubuntu/gpg] | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
 6. 執行 `sudo chmod a+r /etc/apt/keyrings/docker.gpg`
 7. 執行
    
     ```bash
     echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] [https://download.docker.com/linux/ubuntu] \
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     ```
@@ -54,3 +54,4 @@
 1. docker指令：`docker run --network host -d -e PORT=8888 -e OLLAMA_BASE_URL=http://127.0.0.1:11434 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`
 2. 打開瀏覽器，輸入網址：`http://localhost:8888`，應該會開啟open webui的登入畫面
 3. 依照此Youtube影片設定與使用：`https://youtu.be/JpQC0W91E6k?si=cfjHuaEtUUMvAMER`
+
